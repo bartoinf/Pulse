@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pulse Arte — uma experiência artística acessível."><title>Pulse Arte | Pulse</title>
+<link rel="stylesheet" href="../../css/style.css"><link rel="stylesheet" href="../../css/accessibility.css">
+<style>
+.art-hero{padding:clamp(4rem,9vw,7rem) 0 4rem}.art-hero h1{font-size:clamp(2.7rem,7vw,5rem);line-height:1.02;letter-spacing:-.05em;margin:.2rem 0 1rem}.art-hero .lead{max-width:700px;color:var(--pulse-muted);font-size:1.12rem}.art-card{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(280px,1.1fr);gap:2rem;align-items:stretch}.art-placeholder{min-height:390px;border-radius:var(--pulse-radius);border:1px solid var(--pulse-border);background:radial-gradient(circle at 70% 25%,rgba(255,220,100,.28),transparent 14%),radial-gradient(circle at 30% 45%,rgba(90,150,255,.25),transparent 18%),linear-gradient(145deg,#17213a,#0d1427);display:grid;place-items:center;text-align:center;padding:2rem;box-shadow:var(--pulse-shadow)}.art-placeholder strong{display:block;font-size:1.35rem}.art-placeholder span{display:block;margin-top:.5rem;color:var(--pulse-muted)}.art-content{padding:1.8rem;background:var(--pulse-surface);border:1px solid var(--pulse-border);border-radius:var(--pulse-radius)}.art-content h2{margin-top:0}.art-content h3{margin-top:2rem}.art-content p,.art-content li{color:var(--pulse-muted)}.art-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.25rem 0}.art-note{padding:1rem 1.1rem;border-left:3px solid var(--pulse-accent);background:var(--pulse-accent-soft);border-radius:0 12px 12px 0;color:var(--pulse-muted)}
+@media(max-width:800px){.art-card{grid-template-columns:1fr}.art-placeholder{min-height:300px}}
+</style>
+</head>
+<body>
+<header class="site-header"><nav class="site-nav container" aria-label="Navegação principal"><a class="logo" href="../../index.html">PULSE</a><ul><li><a href="../../index.html">Início</a></li><li><a href="../../sobre/index.html">Sobre</a></li><li><a href="../../acessibilidade/index.html">Acessibilidade</a></li><li><a href="../index.html" aria-current="page">Experiências</a></li><li><a href="../../tecnologia/index.html">Tecnologia</a></li><li><a href="../../noticias/index.html">Notícias</a></li><li><a href="../../contacto/index.html">Contato</a></li></ul></nav></header>
+<main>
+<section class="art-hero"><div class="container"><p class="eyebrow">PULSE • Arte</p><h1>Perceba a arte de outras maneiras.</h1><p class="lead">Uma experiência acessível que transforma elementos visuais em descrição, contexto e interpretação — para que diferentes pessoas possam explorar uma obra.</p></div></section>
+<section class="section container" aria-labelledby="obra-title"><div class="art-card">
+<div class="art-placeholder" role="img" aria-label="Representação visual provisória da experiência da obra A Noite Estrelada. A imagem definitiva será adicionada na próxima etapa."><div><strong>🌌 A Noite Estrelada</strong><span>Vincent van Gogh</span><span>Obra de referência da primeira experiência Pulse Arte</span></div></div>
+<article class="art-content"><p class="eyebrow">Obra 01</p><h2 id="obra-title">A Noite Estrelada</h2><p><strong>Vincent van Gogh</strong> · 1889</p><div class="art-actions"><button class="button" type="button" data-speak-art>🔊 Ouvir descrição</button><button class="button button-secondary" type="button" data-stop-art>⏹ Parar</button></div>
+<div class="art-note"><strong>O que estamos construindo?</strong><br>Esta primeira obra é nosso laboratório para testar como uma pessoa pode explorar uma imagem por meio de descrição acessível, elementos visuais e interpretação.</div>
+<h3>👁️ O que existe na obra?</h3><p>Um céu noturno ocupa grande parte da composição. Ele apresenta formas curvas e ondulantes, estrelas luminosas e uma lua brilhante. Na parte inferior, uma paisagem reúne construções, árvores e uma grande forma escura que se eleva em primeiro plano.</p>
+<h3>🎨 Elementos da obra</h3><ul><li><strong>Cores:</strong> predominam tons de azul, com pontos intensos de amarelo e branco.</li><li><strong>Formas:</strong> linhas curvas e espirais criam sensação de movimento no céu.</li><li><strong>Composição:</strong> o céu ocupa a maior área, enquanto a paisagem aparece abaixo.</li><li><strong>Contraste:</strong> as estrelas e a lua se destacam contra o céu escuro.</li></ul>
+<h3>💭 Uma possível interpretação</h3><p>A combinação entre o céu movimentado, os contrastes de luz e a paisagem silenciosa pode transmitir uma sensação de intensidade, contemplação e movimento. Essa é uma possibilidade de interpretação, não uma leitura única da obra.</p>
+</article></div></section>
+</main>
+<footer class="site-footer"><div class="container"><p>&copy; <span data-current-year></span> Pulse.</p></div></footer>
+<script src="../../js/main.js"></script><script src="../../js/accessibility.js"></script>
+<script>
+(function(){const description=document.querySelector('.art-content');const speak=document.querySelector('[data-speak-art]');const stop=document.querySelector('[data-stop-art]');function text(){return [...description.querySelectorAll('h2,h3,p,li')].filter(e=>!e.closest('.art-actions')).map(e=>e.innerText).join('. ')}speak.addEventListener('click',()=>{if(!('speechSynthesis'in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text());u.lang='pt-BR';u.rate=.9;speechSynthesis.speak(u)});stop.addEventListener('click',()=>{if('speechSynthesis'in window)speechSynthesis.cancel()})})();
+</script>
+</body></html>
