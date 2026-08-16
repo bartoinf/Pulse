@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pulse — tecnologia, acessibilidade e experiências inclusivas.">
-    <title>Pulse | Tecnologia que amplia possibilidades</title>
+    <title>Pulse — Tecnologia que amplia possibilidades</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/accessibility.css">
 </head>
@@ -23,31 +23,61 @@
         </ul>
     </nav>
 </header>
+
 <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
         <div class="container">
-            <p>PULSE</p>
-            <h1>Tecnologia que transforma possibilidades em experiências acessíveis.</h1>
-            <p>Uma iniciativa que une acessibilidade, inteligência artificial, arte e tecnologias imersivas para criar experiências mais inclusivas.</p>
-            <a class="button" href="experiencias/index.html">Explorar experiências</a>
+            <p class="eyebrow">PULSE • Tecnologia com propósito</p>
+            <h1 id="hero-title">Tecnologia que amplia possibilidades.</h1>
+            <p class="lead">Acessibilidade, inteligência artificial, arte e tecnologias imersivas para criar experiências mais inclusivas — desde o primeiro momento.</p>
+            <div class="hero-actions">
+                <a class="button" href="experiencias/index.html">Explorar experiências</a>
+                <a class="button button-secondary" href="sobre/index.html">Conhecer o Pulse</a>
+            </div>
         </div>
     </section>
+
     <section class="section container" aria-labelledby="pilares-title">
-        <h2 id="pilares-title">Os pilares do Pulse</h2>
+        <div class="section-heading">
+            <p class="eyebrow">Nossa essência</p>
+            <h2 id="pilares-title">Seis caminhos. Uma mesma direção.</h2>
+            <p>O Pulse conecta tecnologia e criatividade para que mais pessoas possam experimentar, aprender, criar e participar.</p>
+        </div>
         <div class="cards">
-            <article class="card"><h3>Acessibilidade</h3><p>Projetar experiências considerando diferentes formas de perceber e interagir.</p></article>
-            <article class="card"><h3>Inteligência Artificial</h3><p>Usar IA para ampliar autonomia, acesso à informação e possibilidades criativas.</p></article>
-            <article class="card"><h3>Realidade Virtual</h3><p>Explorar ambientes imersivos como ferramenta de inclusão e aprendizagem.</p></article>
-            <article class="card"><h3>Arte, música e literatura</h3><p>Levar cultura e expressão para experiências digitais acessíveis.</p></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">♿</div><h3>Acessibilidade</h3><p>Experiências pensadas para diferentes formas de perceber e interagir.</p></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">✦</div><h3>Inteligência Artificial</h3><p>IA como ferramenta para ampliar autonomia, acesso à informação e criatividade.</p></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">◌</div><h3>Realidade Virtual</h3><p>Ambientes imersivos como novas possibilidades de inclusão e aprendizagem.</p></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">◈</div><h3>Arte</h3><p>Expressão artística acessível, conectando pessoas e diferentes formas de percepção.</p></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">♫</div><h3>Música</h3><p>Experiências sonoras e multissensoriais que convidam à participação.</p></article>
+            <article class="card"><div class="card-icon" aria-hidden="true">▤</div><h3>Literatura</h3><p>Narrativas e conhecimento em formatos mais acessíveis e interativos.</p></article>
         </div>
     </section>
-    <section class="section container" aria-labelledby="proposito-title">
-        <h2 id="proposito-title">Por que o Pulse existe?</h2>
-        <p>Porque tecnologia deve ampliar possibilidades, não criar novas barreiras. O Pulse começa com uma pergunta simples: como podemos usar tecnologia para que mais pessoas possam experimentar, aprender, criar e participar?</p>
-        <a href="sobre/index.html">Conheça nossa visão →</a>
+
+    <section class="statement" aria-labelledby="statement-title">
+        <div class="section container">
+            <p class="eyebrow">Por que o Pulse existe?</p>
+            <p id="statement-title">A tecnologia deve ampliar possibilidades, não criar novas barreiras.</p>
+            <a href="sobre/index.html">Conheça nossa visão →</a>
+        </div>
+    </section>
+
+    <section class="section container" aria-labelledby="access-title">
+        <div class="section-heading">
+            <p class="eyebrow">Acessibilidade desde a origem</p>
+            <h2 id="access-title">Não é um recurso extra. É parte do Pulse.</h2>
+            <p>A primeira versão já nasce com navegação semântica, foco visível, contraste e controles de tamanho de texto. E essa camada continuará evoluindo junto com a plataforma.</p>
+        </div>
+        <a class="button button-secondary" href="acessibilidade/index.html">Conhecer recursos de acessibilidade</a>
     </section>
 </main>
-<footer class="site-footer"><div class="container"><p>&copy; <span data-current-year></span> Pulse.</p></div></footer>
-<script src="js/main.js"></script><script src="js/accessibility.js"></script>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span data-current-year></span> Pulse — Tecnologia que amplia possibilidades.</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/accessibility.js"></script>
 </body>
 </html>
