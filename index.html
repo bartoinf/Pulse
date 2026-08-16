@@ -1,32 +1,53 @@
 <!DOCTYPE html>
-<html lang="es-py">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <title>Pulse</title>
+    <meta name="description" content="Pulse — tecnologia, acessibilidade e experiências inclusivas.">
+    <title>Pulse | Tecnologia que amplia possibilidades</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accessibility.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="./sobre/sobre.html">Sobre</a></li>
-                <li><a href="./contacto/contacto.html">Contacto</a></li>
-                <li><a href="./noticias/noticias.html">Noticias</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h1>PULSE</h1>
-            <P>Pulse es una plataforma de realidade virtual (RV) e inteligencia artificial (IA) que permite a las personas con deficiencias visuales o auditivas experimentar el arte, la música y la literatura de una forma completamente nueva y envolvente.</P>
-            <button>Haga clic aquí!</button>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Pulse Accesibilidad</p>
-    </footer>
+<header class="site-header">
+    <nav class="site-nav container" aria-label="Navegação principal">
+        <a class="logo" href="index.html" aria-label="Pulse — início">PULSE</a>
+        <ul>
+            <li><a href="index.html" aria-current="page">Início</a></li>
+            <li><a href="sobre/index.html">Sobre</a></li>
+            <li><a href="acessibilidade/index.html">Acessibilidade</a></li>
+            <li><a href="experiencias/index.html">Experiências</a></li>
+            <li><a href="tecnologia/index.html">Tecnologia</a></li>
+            <li><a href="noticias/index.html">Notícias</a></li>
+            <li><a href="contacto/index.html">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="hero">
+        <div class="container">
+            <p>PULSE</p>
+            <h1>Tecnologia que transforma possibilidades em experiências acessíveis.</h1>
+            <p>Uma iniciativa que une acessibilidade, inteligência artificial, arte e tecnologias imersivas para criar experiências mais inclusivas.</p>
+            <a class="button" href="experiencias/index.html">Explorar experiências</a>
+        </div>
+    </section>
+    <section class="section container" aria-labelledby="pilares-title">
+        <h2 id="pilares-title">Os pilares do Pulse</h2>
+        <div class="cards">
+            <article class="card"><h3>Acessibilidade</h3><p>Projetar experiências considerando diferentes formas de perceber e interagir.</p></article>
+            <article class="card"><h3>Inteligência Artificial</h3><p>Usar IA para ampliar autonomia, acesso à informação e possibilidades criativas.</p></article>
+            <article class="card"><h3>Realidade Virtual</h3><p>Explorar ambientes imersivos como ferramenta de inclusão e aprendizagem.</p></article>
+            <article class="card"><h3>Arte, música e literatura</h3><p>Levar cultura e expressão para experiências digitais acessíveis.</p></article>
+        </div>
+    </section>
+    <section class="section container" aria-labelledby="proposito-title">
+        <h2 id="proposito-title">Por que o Pulse existe?</h2>
+        <p>Porque tecnologia deve ampliar possibilidades, não criar novas barreiras. O Pulse começa com uma pergunta simples: como podemos usar tecnologia para que mais pessoas possam experimentar, aprender, criar e participar?</p>
+        <a href="sobre/index.html">Conheça nossa visão →</a>
+    </section>
+</main>
+<footer class="site-footer"><div class="container"><p>&copy; <span data-current-year></span> Pulse.</p></div></footer>
+<script src="js/main.js"></script><script src="js/accessibility.js"></script>
 </body>
 </html>
