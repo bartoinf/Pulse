@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recursos de acessibilidade do Pulse.">
+    <title>Acessibilidade | Pulse</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav container" aria-label="Navegação principal">
+            <a class="logo" href="../index.html" aria-label="Pulse — início">PULSE</a>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../sobre/index.html">Sobre</a></li>
+                <li><a href="index.html" aria-current="page">Acessibilidade</a></li>
+                <li><a href="../experiencias/index.html">Experiências</a></li>
+                <li><a href="../tecnologia/index.html">Tecnologia</a></li>
+                <li><a href="../noticias/index.html">Notícias</a></li>
+                <li><a href="../contacto/index.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section container">
+            <h1>Acessibilidade</h1>
+            <p>O Pulse nasce com acessibilidade como princípio de projeto, não como recurso acrescentado no final.</p>
+
+            <div class="card">
+                <h2>Personalize sua experiência</h2>
+                <p>Use os controles abaixo para testar recursos da primeira versão.</p>
+                <p>
+                    <button type="button" class="button" data-text-size="normal">Texto normal</button>
+                    <button type="button" class="button" data-text-size="large">Texto maior</button>
+                    <button type="button" class="button" data-text-size="extra-large">Texto muito maior</button>
+                    <button type="button" class="button" data-toggle-contrast>Alto contraste</button>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span data-current-year></span> Pulse.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/accessibility.js"></script>
+</body>
+</html>
