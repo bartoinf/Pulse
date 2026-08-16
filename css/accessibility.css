@@ -1,18 +1,81 @@
-/* Recursos visuais de acessibilidade da V1 */
+/* PULSE — Access Core V1 */
+
+.accessibility-toggle {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1000;
+    min-height: 48px;
+    padding: .7rem 1rem;
+    border: 1px solid var(--pulse-border);
+    border-radius: 999px;
+    background: var(--pulse-surface);
+    color: var(--pulse-text);
+    box-shadow: var(--pulse-shadow);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.accessibility-panel {
+    position: fixed;
+    right: 1rem;
+    bottom: 4.9rem;
+    z-index: 1001;
+    width: min(360px, calc(100vw - 2rem));
+    padding: 1.25rem;
+    border: 1px solid var(--pulse-border);
+    border-radius: 20px;
+    background: rgba(20, 27, 45, .98);
+    color: var(--pulse-text);
+    box-shadow: var(--pulse-shadow);
+}
+
+.accessibility-panel[hidden] { display: none; }
+.accessibility-panel h2 { margin: 0 0 .35rem; font-size: 1.15rem; }
+.accessibility-panel > p { margin: 0 0 1.1rem; color: var(--pulse-muted); font-size: .9rem; }
+.accessibility-group { padding: 1rem 0; border-top: 1px solid var(--pulse-border); }
+.accessibility-group:first-of-type { border-top: 0; }
+.accessibility-group legend { margin-bottom: .65rem; font-weight: 700; }
+.accessibility-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.accessibility-action {
+    min-width: 44px;
+    min-height: 44px;
+    padding: .55rem .8rem;
+    border: 1px solid var(--pulse-border);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--pulse-text);
+    cursor: pointer;
+    font-weight: 700;
+}
+.accessibility-action:hover, .accessibility-action[aria-pressed="true"] { background: var(--pulse-accent-soft); border-color: var(--pulse-accent); }
+.accessibility-close { float: right; border: 0; background: transparent; color: var(--pulse-text); cursor: pointer; font-size: 1.25rem; }
 
 body.high-contrast {
     --pulse-bg: #000;
     --pulse-surface: #000;
+    --pulse-surface-2: #000;
     --pulse-text: #fff;
     --pulse-muted: #fff;
-    --pulse-accent: #fff;
+    --pulse-accent: #0ff;
     --pulse-focus: #ff0;
+    --pulse-border: #fff;
+    --pulse-accent-soft: rgba(255, 255, 255, .16);
+}
+body.high-contrast .site-header { background: #000; }
+body.high-contrast .hero { background: #000; }
+body.high-contrast .card { background: #000; box-shadow: none; }
+
+body.large-text { font-size: 112.5%; }
+body.extra-large-text { font-size: 125%; }
+body.reduced-motion *, body.reduced-motion *::before, body.reduced-motion *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
 }
 
-body.large-text {
-    font-size: 112.5%;
-}
-
-body.extra-large-text {
-    font-size: 125%;
+@media (max-width: 520px) {
+    .accessibility-toggle { right: .75rem; bottom: .75rem; }
+    .accessibility-panel { right: .75rem; bottom: 4.5rem; }
 }
