@@ -1,0 +1,18 @@
+/* Recursos visuais de acessibilidade da V1 */
+
+body.high-contrast {
+    --pulse-bg: #000;
+    --pulse-surface: #000;
+    --pulse-text: #fff;
+    --pulse-muted: #fff;
+    --pulse-accent: #fff;
+    --pulse-focus: #ff0;
+}
+
+body.large-text {
+    font-size: 112.5%;
+}
+
+body.extra-large-text {
+    font-size: 125%;
+}
