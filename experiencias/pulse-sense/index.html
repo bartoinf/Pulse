@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pulse Sense — uma experiência acessível que transforma uma descrição visual em texto e voz.">
+    <title>Pulse Sense | Pulse</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/accessibility.css">
+</head>
+<body>
+<header class="site-header">
+    <nav class="site-nav container" aria-label="Navegação principal">
+        <a class="logo" href="../../index.html" aria-label="Pulse — início">PULSE</a>
+        <ul>
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="../../sobre/index.html">Sobre</a></li>
+            <li><a href="../../acessibilidade/index.html">Acessibilidade</a></li>
+            <li><a href="../index.html" aria-current="page">Experiências</a></li>
+            <li><a href="../../tecnologia/index.html">Tecnologia</a></li>
+            <li><a href="../../noticias/index.html">Notícias</a></li>
+            <li><a href="../../contacto/index.html">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" aria-labelledby="sense-title">
+        <div class="container">
+            <p class="eyebrow">PULSE SENSE • Experiência 01</p>
+            <h1 id="sense-title">Uma nova forma de perceber.</h1>
+            <p class="lead">Uma experiência experimental que transforma informação visual em uma descrição acessível e pode apresentá-la também por voz.</p>
+        </div>
+    </section>
+
+    <section class="section container" aria-labelledby="scene-title">
+        <div class="section-heading">
+            <p class="eyebrow">Experimente</p>
+            <h2 id="scene-title">Uma paisagem ao entardecer</h2>
+            <p>Imagine uma paisagem tranquila no fim do dia. A descrição abaixo foi escrita para demonstrar como o conteúdo visual pode ser apresentado de outra maneira.</p>
+        </div>
+
+        <article class="card" aria-labelledby="description-title">
+            <div class="card-icon" aria-hidden="true">◉</div>
+            <h3 id="description-title">Descrição acessível</h3>
+            <p id="sense-description">Uma paisagem ao entardecer. O céu apresenta tons suaves de azul, laranja e dourado. Ao longe, uma linha de árvores acompanha o horizonte. A luz do fim do dia cria uma atmosfera tranquila e contemplativa.</p>
+            <div class="hero-actions" style="justify-content:flex-start; margin-top:1.5rem;">
+                <button class="button" type="button" id="speak-description" aria-describedby="speech-status">🔊 Ouvir descrição</button>
+                <button class="button button-secondary" type="button" id="stop-description">■ Parar</button>
+            </div>
+            <p id="speech-status" role="status" aria-live="polite" style="margin-top:1rem;color:var(--pulse-muted);">A descrição está pronta para ser ouvida.</p>
+        </article>
+    </section>
+
+    <section class="section container" aria-labelledby="about-sense-title">
+        <div class="section-heading">
+            <p class="eyebrow">Por trás da experiência</p>
+            <h2 id="about-sense-title">Hoje é uma demonstração. Amanhã pode ser IA.</h2>
+            <p>Nesta primeira versão, a descrição é preparada previamente. Em uma próxima etapa, o Pulse Sense poderá utilizar inteligência artificial para analisar uma imagem, gerar uma descrição acessível e transformá-la em voz.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span data-current-year></span> Pulse — Tecnologia que amplia possibilidades.</p>
+    </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+<script src="../../js/accessibility.js"></script>
+<script>
+(function () {
+    'use strict';
+
+    const description = document.getElementById('sense-description');
+    const speakButton = document.getElementById('speak-description');
+    const stopButton = document.getElementById('stop-description');
+    const status = document.getElementById('speech-status');
+
+    if (!description || !speakButton || !stopButton || !status) return;
+
+    function stopSpeaking() {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            status.textContent = 'Leitura interrompida.';
+        }
+    }
+
+    speakButton.addEventListener('click', function () {
+        if (!('speechSynthesis' in window)) {
+            status.textContent = 'A leitura por voz não está disponível neste navegador.';
+            return;
+        }
+
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(description.textContent.trim());
+        utterance.lang = 'pt-BR';
+        utterance.rate = 0.95;
+        utterance.onstart = function () { status.textContent = 'Lendo a descrição...'; };
+        utterance.onend = function () { status.textContent = 'Leitura concluída.'; };
+        utterance.onerror = function () { status.textContent = 'Não foi possível concluir a leitura.'; };
+        window.speechSynthesis.speak(utterance);
+    });
+
+    stopButton.addEventListener('click', stopSpeaking);
+})();
+</script>
+</body>
+</html>
